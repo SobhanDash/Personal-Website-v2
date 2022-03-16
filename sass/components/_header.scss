@@ -1,0 +1,229 @@
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  background: var(--header);
+  box-shadow: 0 10px 100px rgba(0, 0, 0, 0.1);
+
+  &_content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5rem;
+    @include respond(tab-port) {
+      padding: 0 2rem;
+    }
+  }
+
+  &_logo-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: color 0.3s;
+
+    &:hover {
+      color: var(--themeClrPrimary);
+    }
+  }
+
+  &_logo-img-cont {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50px;
+    overflow: hidden;
+    margin-right: 1.5rem;
+    background: var(--white);
+
+    @include respond(tab-port) {
+      width: 4.5rem;
+      height: 4.5rem;
+      margin-right: 1.2rem;
+    }
+  }
+
+  &_logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  &_logo-sub {
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: "Great Vibes", cursive;
+    letter-spacing: 2.2px;
+    color: var(--secondary);
+  }
+  &_links {
+    display: flex;
+    @include respond(phone) {
+      display: none;
+    }
+  }
+  &_link {
+    padding: 2.2rem 3rem;
+    display: inline-block;
+    font-size: 1.6rem;
+    color: var(--secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    transition: color 0.3s;
+
+    &:hover {
+      color: var(--hover);
+    }
+    @include respond(tab-port) {
+      padding: 3rem 1.8rem;
+      font-size: 1.5rem;
+    }
+  }
+
+  &_main-ham-menu-cont {
+    display: none;
+    width: 3rem;
+    padding: 2.2rem 0;
+
+    @include respond(phone) {
+      display: block;
+    }
+  }
+
+  &_main-ham-menu {
+    width: 100%;
+  }
+
+  &_main-ham-menu-close {
+    width: 100%;
+  }
+
+  &_sm-menu {
+    background: var(--grey);
+    position: absolute;
+    width: 100%;
+    visibility: hidden;
+    top: 100%;
+    opacity: 0;
+    transition: all 0.3s;
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.1);
+
+    &--active {
+      visibility: hidden;
+      opacity: 0;
+
+      @include respond(phone) {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+
+  &_sm-menu-link {
+    a {
+      display: block;
+      text-decoration: none;
+      padding: 2.5rem 3rem;
+      font-size: 1.6rem;
+      color: var(--themeClrPrimary);
+      text-align: right;
+      border-bottom: 1px solid var(--lightgrey);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      transition: color 0.3s;
+
+      &:hover {
+        color: var(--hover);
+      }
+    }
+    &:first-child {
+      a {
+        border-top: 1px solid var(--lightgrey);
+      }
+    }
+  }
+
+  &_sm-menu-link-last {
+    border-bottom: 0;
+    text-align: right;
+    padding: 1.3rem 3rem;
+  }
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin-top: 1.5rem;
+
+  /* Hide default HTML checkbox */
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  input {
+    &:checked + .slider {
+      background-color: #2196f3;
+    }
+
+    &:focus + .slider {
+      box-shadow: 0 0 1px #2196f3;
+    }
+
+    &:checked + .slider:before {
+      -webkit-transform: translateX(24px);
+      -ms-transform: translateX(24px);
+      transform: translateX(24px);
+      background: white url("https://i.ibb.co/FxzBYR9/night.png");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+
+  &:before {
+    position: absolute;
+    content: "";
+    height: 40px;
+    width: 40px;
+    left: 0px;
+    bottom: 4px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    box-shadow: 0 0px 15px #2020203d;
+    background: white url("https://i.ibb.co/7JfqXxB/sunny.png");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+
+  &:before {
+    border-radius: 50%;
+  }
+}

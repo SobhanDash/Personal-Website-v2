@@ -1,0 +1,100 @@
+.theme-light {
+  --themeClrPrimary: #4c1d95;
+  --secondary: #6034be;
+  --grey: #e1e1e1;
+  --hover: #0369a1;
+  --lightgrey: #cecece;
+  --darkgrey: #5c5858;
+  --text: #1c1c1c;
+  --white: #fff;
+  --about: #fafafa;
+  --project: #eee;
+  --header: #fff;
+}
+
+.theme-dark {
+  --themeClrPrimary: #4c1d95;
+  --secondary: #6034be;
+  --grey: #464646;
+  --hover: #0369a1;
+  --lightgrey: #5c5858;
+  --darkgrey: #e1e1e1;
+  --text: #eee;
+  --white: #fff;
+  --about: #1c1c1c;
+  --project: #202020;
+  --header: #272626;
+}
+
+// #777
+// #eee
+// #333
+// #999
+// #000
+// #444
+// (#252525f8, 0.3) : gradient
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-family: inherit;
+}
+
+html {
+  // This defines what 1rem is
+  font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+  scroll-behavior: smooth;
+
+  @include respond(tab-land) {
+    // width < 1200?
+    font-size: 59%; //1 rem =
+  }
+
+  @include respond(tab-port) {
+    // width < 900?
+    font-size: 56%; //1 rem =
+  }
+
+  @include respond(big-desktop) {
+    font-size: 65%; //1rem =
+  }
+}
+
+body {
+  box-sizing: border-box;
+  position: relative;
+  line-height: 1.5;
+  font-family: sans-serif;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  letter-spacing: 0.1rem;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+input:focus,
+button:focus,
+a:focus,
+textarea:focus {
+  outline: none;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+textarea {
+  resize: none;
+}
